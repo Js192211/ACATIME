@@ -8,162 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark-blue: #0b132b;
-            --bg-card: #1c2541;
-            --accent-blue: #48cae4;
-            --text-muted-custom: #8d99ae;
-        }
-
-        body {
-            background-color: var(--bg-dark-blue);
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Sidebar lateral */
-        .sidebar {
-            width: 260px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #080d1e;
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px;
-            z-index: 1000;
-        }
-
-        .sidebar-brand {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        .sidebar-menu li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar-menu a {
-            color: var(--text-muted-custom);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar-menu a:hover, .sidebar-menu a.active {
-            color: #fff;
-            background-color: rgba(72, 202, 228, 0.1);
-        }
-
-        .sidebar-menu a.active {
-            border-left: 4px solid var(--accent-blue);
-        }
-
-        /* Contenido principal */
-        .main-content {
-            margin-left: 260px;
-            padding: 30px;
-        }
-
-        /* Topbar superior */
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 6px 15px;
-            border-radius: 20px;
-        }
-
-        /* Tarjetas de estadísticas */
-        .stat-card {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .stat-icon {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .icon-materias { color: #52b788; }
-        .icon-docentes { color: #48cae4; }
-        .icon-aulas { color: #00b4d8; }
-        .icon-horarios { color: #ffb703; }
-
-        /* Tabla de Próximas clases */
-        .table-custom-container {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 30px;
-        }
-
-        .table-custom {
-            color: #fff;
-            margin-bottom: 0;
-        }
-
-        .table-custom th {
-            color: var(--text-muted-custom);
-            font-weight: 500;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            background: transparent;
-        }
-
-        .table-custom td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            background: transparent;
-            color: #fff;
-            padding: 14px 10px;
-            vertical-align: middle;
-        }
-
-        .status-dot {
-            height: 8px;
-            width: 8px;
-            background-color: #52b788;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-        }
-    </style>
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -196,14 +42,14 @@
             <button class="btn text-white d-md-none"><i class="bi bi-list fs-3"></i></button>
             <div class="ms-auto user-profile">
                 <i class="bi bi-person-circle fs-5"></i>
-                <span class="fw-medium">Jesús López</span>
+                <span class="fw-medium">David Choez</span>
                 <i class="bi bi-chevron-down small text-muted"></i>
             </div>
         </div>
 
         <!-- Saludo y Bienvenida -->
         <div class="mb-4">
-            <h2 class="fw-bold mb-1">Bienvenido, Jesús López</h2>
+            <h2 class="fw-bold mb-1">Bienvenido, David Choez</h2>
             <p class="text-muted">Gestiona tus horarios y mantente al día con tus materias.</p>
         </div>
 
@@ -280,5 +126,5 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-                                  </html>
-
+    </html>
+    
