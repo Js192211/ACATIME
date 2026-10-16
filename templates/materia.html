@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        
+        <!-- Encabezado -->
+        <header class="encabezado">
+            <div class="icono-titulo">▦</div>
+            <div>
+                <h1>Materias</h1>
+                <p>Listado de materias del periodo académico.</p>
+            </div>
+        </header>
+
+        <!-- Buscador y botón -->
+        <div class="barra-superior">
+            <div class="buscador">
+                <span>⌕</span>
+                <input type="text" placeholder="Buscar materia...">
+            </div>
+
+            <button class="btn-nueva">＋ Nueva materia</button>
+        </div>
+
+        <!-- Tabla de materias -->
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Créditos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>PO0001</td>
+                        <td>Programación Orientada a Objetos</td>
+                        <td>4</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>EDT002</td>
+                        <td>Estructura de Datos</td>
+                        <td>4</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>BD003</td>
+                        <td>Base de Datos</td>
+                        <td>4</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>IV004</td>
+                        <td>Ingeniería de Software</td>
+                        <td>3</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>RED005</td>
+                        <td>Redes y Comunicaciones</td>
+                        <td>3</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>WEB006</td>
+                        <td>Desarrollo Web</td>
+                        <td>3</td>
+                        <td class="acciones">
+                            <button class="btn-editar" title="Editar">✎</button>
+                            <button class="btn-eliminar" title="Eliminar">▤</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación -->
+        <footer class="paginacion">
+            <div class="paginas">
+                <button class="btn-pagina">‹</button>
+                <button class="btn-pagina activo">1</button>
+                <button class="btn-pagina">2</button>
+                <button class="btn-pagina">›</button>
+            </div>
+
+            <p>Mostrando 1 - 6 de 6 materias</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
