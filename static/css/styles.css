@@ -201,3 +201,216 @@ body {
 .badge-green  { background-color: #059669; }
 .badge-yellow { background-color: #b45309; }
 .badge-purple { background-color: #7c3aed; }
+
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES (PALETA DE COLORES) INTERFAZ DEL DOCENTE 
+   ========================================================================== */
+:root {
+    /* Color de fondo general de la aplicación (Azul muy oscuro) */
+    --bg-dark-blue: #0b132b;
+    
+    /* Color de fondo para las tarjetas y contenedores */
+    --bg-card: #1c2541;
+    
+    /* Color azul claro de acento/destacado */
+    --accent-blue: #48cae4;
+    
+    /* Color gris claro para textos secundarios o deshabilitados */
+    --text-muted-custom: #8d99ae;
+}
+
+/* ==========================================================================
+   2. ESTILOS GENERALES DEL CUERPO (BODY)
+   ========================================================================== */
+body {
+    /* Aplicar el color de fondo oscuro global */
+    background-color: var(--bg-dark-blue);
+    
+    /* Texto principal en blanco */
+    color: #ffffff;
+    
+    /* Tipografía moderna por defecto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Prevenir desbordamiento u scroll horizontal no deseado */
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN LATERAL (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    /* Ancho fijo del menú lateral */
+    width: 260px;
+    
+    /* Ocupa el 100% de la altura de la pantalla */
+    height: 100vh;
+    
+    /* Mantiene la barra fija al hacer scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* Fondo más oscuro que el cuerpo principal */
+    background-color: #080d1e;
+    
+    /* Borde fino sutil a la derecha para separar del contenido */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    
+    /* Flexbox para distribuir el logo arriba y "Cerrar sesión" abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding: 20px;
+    z-index: 1000; /* Asegura que la barra quede por encima de otros elementos */
+}
+
+/* Logotipo / Nombre de la marca AcadTime */
+.sidebar-brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+    margin-bottom: 30px;
+}
+
+/* Lista del menú de opciones */
+.sidebar-menu {
+    list-style: none; /* Elimina las viñetas por defecto */
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px; /* Espaciado vertical entre cada enlace */
+}
+
+/* Enlaces del menú */
+.sidebar-menu a {
+    color: var(--text-muted-custom);
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el icono y el texto de la opción */
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Transición suave al pasar el cursor */
+}
+
+/* Efecto Hover (pasar el ratón) y opción activa seleccionada */
+.sidebar-menu a:hover, 
+.sidebar-menu a.active {
+    color: #ffffff;
+    background-color: rgba(72, 202, 228, 0.1); /* Fondo translúcido azul */
+}
+
+/* Indicador visual de pestaña activa (Línea vertical izquierda) */
+.sidebar-menu a.active {
+    border-left: 4px solid var(--accent-blue);
+}
+
+/* ==========================================================================
+   4. ÁREA DE CONTENIDO PRINCIPAL (MAIN CONTENT)
+   ========================================================================== */
+.main-content {
+    /* Margen izquierdo igual al ancho de la barra lateral para evitar solapamiento */
+    margin-left: 260px;
+    padding: 30px;
+}
+
+/* ==========================================================================
+   5. BARRA SUPERIOR (TOPBAR / PERFIL DE USUARIO)
+   ========================================================================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del nombre de usuario (David Choez) */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05); /* Cápsula suave gris translúcida */
+    padding: 6px 15px;
+    border-radius: 20px; /* Forma redondeada de píldora */
+}
+
+/* ==========================================================================
+   6. TARJETAS DE ESTADÍSTICAS (MÉTRICAS / RESUMEN)
+   ========================================================================== */
+.stat-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease; /* Transición suave para animación */
+}
+
+/* Animación de elevación al pasar el cursor sobre las tarjetas */
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Tamaño de los iconos dentro de las tarjetas métricas */
+.stat-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Colores personalizados para cada tipo de icono métrico */
+.icon-materias { color: #52b788; }  /* Verde */
+.icon-docentes { color: #48cae4; }  /* Azul celeste */
+.icon-aulas { color: #00b4d8; }     /* Azul intenso */
+.icon-horarios { color: #ffb703; }  /* Amarillo / Dorado */
+
+/* ==========================================================================
+   7. CONTENEDOR Y TABLA DE PRÓXIMAS CLASES
+   ========================================================================== */
+.table-custom-container {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Estilos específicos de la tabla en modo oscuro */
+.table-custom {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* Encabezado de la tabla */
+.table-custom th {
+    color: var(--text-muted-custom);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+}
+
+/* Celdas de contenido */
+.table-custom td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+    color: #ffffff;
+    padding: 14px 10px;
+    vertical-align: middle;
+}
+
+/* Puntos o indicadores verdes de estado al lado de las horas */
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #52b788; /* Punto verde */
+    border-radius: 50%;        /* Lo convierte en un círculo perfecto */
+    display: inline-block;
+    margin-right: 8px;
+}
