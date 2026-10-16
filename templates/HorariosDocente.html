@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Horarios - Estudiante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <div class="header-icon">📅</div>
+            <div class="header-text">
+                <h2>Mis Horarios</h2>
+                <p>Consulta y gestiona tus horarios académicos.</p>
+            </div>
+        </div>
+
+        <!-- Filtros y Búsqueda -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Buscar materia, docente o aula...">
+            <select class="filter-select">
+                <option value="todos">Todos</option>
+            </select>
+            <button class="btn-search">🔍</button>
+        </div>
+
+        <!-- Lista de Materias -->
+        <div class="schedule-list">
+            
+            <!-- Tarjeta 1 -->
+            <div class="card">
+                <div class="time-block color-blue">
+                    <span>07:00</span>
+                    <span>09:00</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>💻</span>
+                        <span>Programación Orientada a Objetos</span>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>Docente:</strong> Juan Pérez</p>
+                        <p><strong>Aula:</strong> A-101</p>
+                    </div>
+                    <span class="badge badge-blue">Lunes - Miércoles - Viernes</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="card">
+                <div class="time-block color-green">
+                    <span>09:00</span>
+                    <span>11:00</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>🖥️</span>
+                        <span>Estructura de Datos</span>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>Docente:</strong> María Gómez</p>
+                        <p><strong>Aula:</strong> A-102</p>
+                    </div>
+                    <span class="badge badge-green">Martes - Jueves</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <div class="time-block color-yellow">
+                    <span>11:00</span>
+                    <span>13:00</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>💻</span>
+                        <span>Base de Datos</span>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>Docente:</strong> Carlos Ruiz</p>
+                        <p><strong>Aula:</strong> B-201</p>
+                    </div>
+                    <span class="badge badge-yellow">Lunes - Miércoles</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="card">
+                <div class="time-block color-purple">
+                    <span>13:00</span>
+                    <span>15:00</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>📺</span>
+                        <span>Ingeniería de Software</span>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>Docente:</strong> Ana Torres</p>
+                        <p><strong>Aula:</strong> A-103</p>
+                    </div>
+                    <span class="badge badge-purple">Martes - Jueves</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* ==========================================================================
+   1. RESET BÁSICO Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #080f1e; /* Fondo oscuro global de la página */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR PRINCIPAL / PANEL
+   ========================================================================== */
+.container {
+    background-color: #0b172a; /* Fondo azul oscuro del panel */
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   3. ENCABEZADO DE LA SECCIÓN (Ícono y Título)
+   ========================================================================== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    background-color: #1e293b;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.header-text p {
+    font-size: 0.85rem;
+    color: #94a3b8; /* Texto secundario gris claro */
+}
+
+/* ==========================================================================
+   4. BARRA DE BÚSQUEDA Y FILTROS
+   ========================================================================== */
+.search-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    background-color: #111e36;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #64748b;
+}
+
+.filter-select {
+    background-color: #111e36;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-search {
+    background-color: #2563eb; /* Azul principal para el botón */
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-search:hover {
+    background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   5. LISTADO Y TARJETAS DE MATERIAS / CLASES
+   ========================================================================== */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tarjeta individual de horario */
+.card {
+    background-color: #111e36;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Bloque lateral de hora (Izquierda) */
+.time-block {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Contenido de la tarjeta (Centro/Derecha) */
+.card-content {
+    flex: 1;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título de la materia */
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Información adicional (Docente/Grupo y Aula) */
+.card-info {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* ==========================================================================
+   6. ETIQUETAS DE DÍAS (BADGES)
+   ========================================================================== */
+.badge {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   7. PALETA DE COLORES (Compartida para bloques y etiquetas)
+   ========================================================================== */
+/* Variantes de color para el bloque de hora */
+.color-blue   { background-color: #3b82f6; }
+.color-green  { background-color: #10b981; }
+.color-yellow { background-color: #d97706; }
+.color-purple { background-color: #8b5cf6; }
+
+/* Variantes de color para las insignias de días */
+.badge-blue   { background-color: #2563eb; }
+.badge-green  { background-color: #059669; }
+.badge-yellow { background-color: #b45309; }
+.badge-purple { background-color: #7c3aed; }
