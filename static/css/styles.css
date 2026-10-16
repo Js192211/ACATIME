@@ -1,6 +1,142 @@
+/* leandro Anchundia 
+/* --- RESET Y CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTENEDOR PRINCIPAL (TARJETA) --- */
+.contenedor-login {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* --- LOGO Y TÍTULOS --- */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1f2937;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- FORMULARIO Y CAMPOS --- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 650;
+    color: #374151;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* --- CAMPOS DINÁMICOS --- */
+.campo-dinamico {
+    background-color: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    padding: 10px 15px 15px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* --- BOTÓN DE ENVÍO --- */
+button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- ENLACES INFERIORES --- */
+.enlace-registro, .volver {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #6b7280;
+}
+
+.enlace-registro a, .volver a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.enlace-registro a:hover, .volver a:hover {
+    text-decoration: underline;
+}
+
+.volver {
+    margin-top: 10px;
+}
+
+
+
+
 /* ==========================================================================
    1. RESET BÁSICO Y CONFIGURACIÓN GLOBAL
-   ========================================================================== */
+jesus lopez 
+   ========================================================================== *
 * {
     margin: 0;
     padding: 0;
