@@ -1,80 +1,66 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcadTime - Crear cuenta</title>
+    <title>AcadTime - Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- Sección de Creación de Cuenta -->
-        <div class="form-card">
-            <div class="brand">
-                <span>🎓</span> AcadTime[cite: 1]
+<div class="main-container">
+    <div class="login-panel">
+        <div class="panel-header">
+            <!-- Icono de gorra de graduación (Mortarboard) -->
+            <svg class="grad-cap" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L2 6l10 5l10-5L12 1zm10 10v6l-10 5l-10-5v-6l10-5l10 5z"/>
+                <path d="M22 6L12 11L2 6M12 21L2 16M22 16L12 21" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="brand-name">
+                <span class="brand-acad">Acad</span><span class="brand-time">Time</span>
             </div>
-            <h2>Crear cuenta[cite: 1]</h2>
-            <form>
-                <div class="input-group">
-                    <span class="icon-left">👤</span>
-                    <input type="text" placeholder="Nombre completo"[cite: 1]>
-                </div>
-                <div class="input-group">
-                    <span class="icon-left">✉️</span>
-                    <input type="email" placeholder="Correo electrónico"[cite: 1]>
-                </div>
-                <div class="input-group">
-                    <span class="icon-left">🔒</span>
-                    <input type="password" placeholder="Contraseña"[cite: 1]>
-                    <span class="icon-right">👁️</span>
-                </div>
-                <div class="input-group">
-                    <span class="icon-left">🔒</span>
-                    <input type="password" placeholder="Confirmar contraseña"[cite: 1]>
-                    <span class="icon-right">👁️</span>
-                </div>
-                <button type="submit" class="btn-submit">
-                    <span>👤</span> Registrarse[cite: 1]
-                </button>
-            </form>
-            <div class="footer-link">
-                ¿Ya tienes una cuenta? <a href="#">Inicia sesión[cite: 1]</a>
-            </div>
+            <h2>Iniciar sesión</h2>
         </div>
 
-        <!-- Sección de Notificaciones y Estados -->
-        <div class="alerts-container">
-            <div class="alert alert-success">
-                <span>✅</span>
-                <div>
-                    <h4>¡Éxito![cite: 1]</h4>
-                    <p>Operación realizada correctamente.[cite: 1]</p>
-                </div>
+        <form>
+            <div class="input-group">
+                <label for="email"><i class="fas fa-user"></i></label>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
             </div>
-            <div class="alert alert-error">
-                <span>❌</span>
-                <div>
-                    <h4>Error[cite: 1]</h4>
-                    <p>Ocurrió un error. Intenta de nuevo.[cite: 1]</p>
-                </div>
+
+            <div class="input-group">
+                <label for="password"><i class="fas fa-lock"></i></label>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <i class="fas fa-eye-slash eye-icon"></i>
             </div>
-            <div class="alert alert-warning">
-                <span>⚠️</span>
-                <div>
-                    <h4>Advertencia[cite: 1]</h4>
-                    <p>Revisa los campos obligatorios.[cite: 1]</p>
-                </div>
+
+            <div class="options-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    <span class="checkbox-label">Recordarme</span>
+                </label>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
             </div>
-            <div class="alert alert-info">
-                <span>ℹ️</span>
-                <div>
-                    <h4>Información[cite: 1]</h4>
-                    <p>Los cambios se guardaron correctamente.[cite: 1]</p>
-                </div>
-            </div>
+
+            <button type="submit" class="btn-primary">
+                Ingresar <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div class="separator">
+            <span>o</span>
         </div>
+
+        <button class="btn-secondary">
+            <i class="fas fa-user-plus"></i> Crear una cuenta
+        </button>
+
+        <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
     </div>
+</div>
 
 </body>
 </html>
