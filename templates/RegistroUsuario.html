@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcadTime - Crear cuenta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <div class="contenedor-login">
+
+        <div class="logo">
+            AcadTime
+        </div>
+
+        <h1>Crear cuenta</h1>
+        <p class="subtitulo">Regístrate en el sistema de gestión académica</p>
+
+        <form method="POST" novalidate>
+
+            <!-- NOMBRE -->
+            <label for="nombre">Nombre completo</label>
+            <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                placeholder="Ingresa tu nombre completo" 
+                autocomplete="name"
+                required
+            >
+
+            <!-- CORREO -->
+            <label for="correo">Correo electrónico</label>
+            <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                placeholder="correo@acatime.com" 
+                autocomplete="email"
+                required
+            >
+
+            <!-- CONTRASEÑA -->
+            <label for="contraseña">Contraseña</label>
+            <input 
+                type="password" 
+                id="contraseña" 
+                name="contraseña" 
+                placeholder="Ingresa una contraseña segura" 
+                autocomplete="new-password"
+                required
+            >
+
+            <!-- ROL -->
+            <label for="rol">Tipo de usuario</label>
+            <select id="rol" name="rol" required>
+                <option value="" disabled selected>Selecciona un rol</option>
+                <option value="Estudiante">Estudiante</option>
+                <option value="Docente">Docente</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+
+            <!-- CAMPOS DEL ESTUDIANTE -->
+            <div id="datos-estudiante" class="campo-dinamico" style="display: none;">
+                <label for="programa">Programa académico</label>
+                <input 
+                    type="text" 
+                    id="programa" 
+                    name="programa" 
+                    placeholder="Ej. Informática"
+                >
+
+                <label for="semestre">Semestre</label>
+                <input 
+                    type="number" 
+                    id="semestre" 
+                    name="semestre" 
+                    min="1" 
+                    max="12" 
+                    value="1"
+                >
+            </div>
+
+            <!-- CAMPO DEL DOCENTE -->
+            <div id="datos-docente" class="campo-dinamico" style="display: none;">
+                <label for="especialidad">Especialidad</label>
+                <input 
+                    type="text" 
+                    id="especialidad" 
+                    name="especialidad" 
+                    placeholder="Ej. Programación"
+                >
+            </div>
+
+            <button type="submit">
+                Crear cuenta
+            </button>
+
+        </form>
+
+        <p class="enlace-registro">
+            ¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Iniciar sesión</a>
+        </p>
+
+        <p class="volver">
+            <a href="{{ url_for('index') }}">← Volver al inicio</a>
+        </p>
+
+    </div>
+
+    <script>
+        const rol = document.getElementById("rol");
+        const datosEstudiante = document.getElementById("datos-estudiante");
+        const datosDocente = document.getElementById("datos-docente");
+        
+        // Elementos internos para gestionar el atributo required dinámicamente
+        const inputPrograma = document.getElementById("programa");
+        const inputEspecialidad = document.getElementById("especialidad");
+
+        function actualizarCampos() {
+            // Ocultar ambos contenedores por defecto
+            datosEstudiante.style.display = "none";
+            datosDocente.style.display = "none";
+            
+            // Remover 'required' de los campos condicionales para evitar bloqueos al enviar el form
+            inputPrograma.removeAttribute("required");
+            inputEspecialidad.removeAttribute("required");
+
+            if (rol.value === "Estudiante") {
+                datosEstudiante.style.display = "block";
+                inputPrograma.setAttribute("required", "true");
+            } else if (rol.value === "Docente") {
+                datosDocente.style.display = "block";
+                inputEspecialidad.setAttribute("required", "true");
+            }
+        }
+
+        rol.addEventListener("change", actualizarCampos);
+        
+        // Ejecutar al cargar por si el navegador recuerda la selección previa
+        actualizarCampos();
+    </script>
+
+</body>
+
+</html>
