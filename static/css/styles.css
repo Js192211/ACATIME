@@ -6,6 +6,7 @@
    Panel administrativo: David Choez
    Inicio de sesión y registro: Leandro Anchundia
    Gestión de materias: Sonia Lucas
+   Inicio (index): Melanie Palma
 ===================================================== */
 
 
@@ -1048,6 +1049,255 @@ body.pagina-materias-sonia {
 
 
 /* =====================================================
+   6B. INICIO (INDEX)
+   Melanie Palma
+   Diseño azul marino y dorado
+===================================================== */
+
+/*
+   IMPORTANTE:
+   La página de inicio debe utilizar:
+   <body class="pagina-inicio">
+   para aislar sus estilos del resto del proyecto.
+*/
+
+
+/* Configuración de la página */
+
+body.pagina-inicio {
+    --inicio-fondo: #03172f;
+    --inicio-borde: #24496d;
+    --inicio-texto: #f3f7ff;
+    --inicio-secundario: #9bb2d0;
+    --inicio-dorado: #d1aa66;
+    --inicio-dorado-claro: #e5b975;
+
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--inicio-texto);
+    background:
+        radial-gradient(circle at 10% 20%, rgba(20, 50, 80, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(50, 100, 150, 0.4) 0%, transparent 40%),
+        linear-gradient(135deg, #0f1a2f 0%, #03172f 100%);
+}
+
+
+/* Menú superior */
+
+.pagina-inicio .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 22px 20px;
+}
+
+.pagina-inicio .marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pagina-inicio .marca i,
+.pagina-inicio .marca .acad {
+    color: var(--inicio-dorado);
+}
+
+.pagina-inicio .marca .time {
+    color: #ffffff;
+}
+
+.pagina-inicio .menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+}
+
+.pagina-inicio .menu a.enlace {
+    display: inline-block;
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    color: var(--inicio-texto);
+    text-decoration: none;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagina-inicio .menu a.enlace:hover,
+.pagina-inicio .menu a.enlace.activo {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--inicio-dorado);
+}
+
+.pagina-inicio .menu a.enlace-login {
+    border: 1px solid var(--inicio-dorado);
+    color: var(--inicio-dorado);
+}
+
+
+/* Presentación principal */
+
+.pagina-inicio .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px 50px;
+
+    text-align: center;
+}
+
+.pagina-inicio .hero h1 {
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.pagina-inicio .hero h1 .dorado {
+    color: var(--inicio-dorado);
+}
+
+.pagina-inicio .hero p {
+    max-width: 620px;
+    margin: 20px auto 32px;
+
+    color: var(--inicio-secundario);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.pagina-inicio .hero-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.pagina-inicio .btn-primario,
+.pagina-inicio .btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagina-inicio .btn-primario {
+    background: var(--inicio-dorado);
+    color: #0f1a2f;
+    font-weight: 700;
+    border: none;
+}
+
+.pagina-inicio .btn-primario:hover {
+    background: var(--inicio-dorado-claro);
+}
+
+.pagina-inicio .btn-primario:active {
+    transform: scale(0.98);
+}
+
+.pagina-inicio .btn-secundario {
+    background: transparent;
+    color: var(--inicio-texto);
+    border: 1px solid var(--inicio-borde);
+}
+
+.pagina-inicio .btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pagina-inicio a:focus-visible {
+    outline: 2px solid #1679ed;
+    outline-offset: 3px;
+}
+
+
+/* Tarjetas de Horarios, Docentes y Aulas */
+
+.pagina-inicio .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 70px;
+}
+
+.pagina-inicio .tarjeta {
+    padding: 28px 24px;
+
+    border: 1px solid var(--inicio-borde);
+    border-radius: 13px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(8, 34, 64, 0.98),
+        rgba(4, 24, 48, 0.98)
+    );
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18),
+        inset 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.pagina-inicio .tarjeta i {
+    display: block;
+    margin-bottom: 14px;
+
+    color: var(--inicio-dorado);
+    font-size: 34px;
+}
+
+.pagina-inicio .tarjeta h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.pagina-inicio .tarjeta p {
+    color: var(--inicio-secundario);
+    line-height: 1.6;
+}
+
+
+/* Responsive de la portada */
+
+@media (max-width: 600px) {
+
+    .pagina-inicio .menu {
+        justify-content: center;
+    }
+
+    .pagina-inicio .hero {
+        padding: 40px 16px 30px;
+    }
+
+    .pagina-inicio .btn-primario,
+    .pagina-inicio .btn-secundario {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
    7. BOTONES GENERALES
 ===================================================== */
 
@@ -1314,4 +1564,5 @@ button:disabled {
    David Choez: panel administrativo
    Leandro Anchundia: inicio de sesión y registro
    Sonia Lucas: gestión de materias
+   Melanie Palma: inicio (index)
 ===================================================== */
