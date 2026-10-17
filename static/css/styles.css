@@ -1,9 +1,45 @@
 
+/* =====================================================
+   ACADEMTIME
+   Sistema de gestión de horarios académicos
+
+   Horarios de estudiante y docente: Jesús López
+   Panel administrativo: David Choez
+   Inicio de sesión y registro: Leandro Anchundia
+===================================================== */
 
 
-/* ========================================
-   ESTILOS GENERALES DE ACADEMTIME  Jesus lopez horario del docnete y estudiante
-======================================== */
+/* =====================================================
+   1. VARIABLES GENERALES
+===================================================== */
+
+:root {
+    --sidebar-width: 260px;
+
+    --sidebar-bg: #1e293b;
+    --sidebar-color: #94a3b8;
+    --sidebar-hover: #334155;
+
+    --main-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --border-color: #e2e8f0;
+    --muted-color: #64748b;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+
+    --radius: 12px;
+}
+
+
+/* =====================================================
+   2. CONFIGURACIÓN GENERAL
+===================================================== */
 
 * {
     margin: 0;
@@ -11,52 +47,82 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
-    min-height: 100vh;
-    padding: 30px 20px;
+html {
+    min-height: 100%;
 }
 
-/* ========================================
-   CONTENEDOR PRINCIPAL
-======================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--main-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =====================================================
+   3. CONTENEDOR PRINCIPAL DE HORARIOS
+   Jesús López
+===================================================== */
 
 .container {
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: 1100px;
-    margin: 0 auto;
-    background: #ffffff;
+    margin: 30px auto;
     padding: 30px;
+
+    background: var(--card-bg);
     border-radius: 16px;
+
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
 }
 
-/* ========================================
-   ENCABEZADO
-======================================== */
+
+/* =====================================================
+   4. ENCABEZADO DE HORARIOS
+===================================================== */
 
 .header {
     display: flex;
     align-items: center;
     gap: 18px;
+
     margin-bottom: 30px;
     padding-bottom: 22px;
-    border-bottom: 1px solid #e2e8f0;
+
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-icon {
     width: 60px;
     height: 60px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-shrink: 0;
+
     background: #dbeafe;
-    color: #2563eb;
+    color: var(--primary);
+
     border-radius: 14px;
     font-size: 30px;
-    flex-shrink: 0;
+}
+
+.header-text {
+    min-width: 0;
 }
 
 .header-text h2 {
@@ -67,14 +133,15 @@ body {
 }
 
 .header-text p {
-    color: #64748b;
+    color: var(--muted-color);
     font-size: 14px;
     line-height: 1.5;
 }
 
-/* ========================================
-   BARRA DE BÚSQUEDA Y FILTROS
-======================================== */
+
+/* =====================================================
+   5. BÚSQUEDA Y FILTROS DE HORARIOS
+===================================================== */
 
 .search-bar {
     display: flex;
@@ -86,12 +153,16 @@ body {
 .filter-select {
     height: 46px;
     padding: 0 14px;
+
     border: 1px solid #cbd5e1;
     border-radius: 9px;
+
     background: #ffffff;
-    color: #334155;
+    color: var(--text-color);
+
     font-size: 14px;
     outline: none;
+
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -107,30 +178,41 @@ body {
 
 .search-input:focus,
 .filter-select:focus {
-    border-color: #2563eb;
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 .btn-search {
     width: 48px;
     height: 46px;
+    flex-shrink: 0;
+
     border: none;
     border-radius: 9px;
-    background: #2563eb;
-    color: white;
+
+    background: var(--primary);
+    color: #ffffff;
+
     font-size: 19px;
     cursor: pointer;
+
     transition: background 0.2s, transform 0.2s;
 }
 
 .btn-search:hover {
-    background: #1d4ed8;
+    background: var(--primary-hover);
     transform: translateY(-1px);
 }
 
-/* ========================================
-   LISTA DE HORARIOS
-======================================== */
+.btn-search:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   6. LISTA DE HORARIOS
+===================================================== */
 
 .schedule-list {
     display: flex;
@@ -138,18 +220,23 @@ body {
     gap: 18px;
 }
 
-/* ========================================
-   TARJETAS DE MATERIAS
-======================================== */
+
+/* =====================================================
+   7. TARJETAS DE MATERIAS
+===================================================== */
 
 .card {
     display: flex;
     align-items: stretch;
+
     overflow: hidden;
+
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 13px;
+
     box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -158,19 +245,23 @@ body {
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.09);
 }
 
-/* ========================================
-   BLOQUE DE HORAS
-======================================== */
+
+/* =====================================================
+   8. BLOQUE DE HORAS
+===================================================== */
 
 .time-block {
     width: 115px;
     min-width: 115px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     gap: 10px;
     padding: 20px 12px;
+
     font-size: 17px;
     font-weight: 700;
     color: #ffffff;
@@ -186,9 +277,10 @@ body {
     opacity: 0.95;
 }
 
-/* ========================================
-   COLORES DE LOS HORARIOS
-======================================== */
+
+/* =====================================================
+   9. COLORES DE LOS HORARIOS
+===================================================== */
 
 .color-blue {
     background: linear-gradient(145deg, #3b82f6, #1d4ed8);
@@ -206,9 +298,10 @@ body {
     background: linear-gradient(145deg, #a855f7, #7e22ce);
 }
 
-/* ========================================
-   CONTENIDO DE LAS TARJETAS
-======================================== */
+
+/* =====================================================
+   10. CONTENIDO DE LAS TARJETAS
+===================================================== */
 
 .card-content {
     flex: 1;
@@ -220,7 +313,9 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
+
     margin-bottom: 14px;
+
     color: #0f172a;
     font-size: 17px;
     font-weight: 700;
@@ -236,28 +331,32 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 28px;
+
     margin-bottom: 15px;
 }
 
 .card-info p {
-    color: #64748b;
+    color: var(--muted-color);
     font-size: 14px;
     line-height: 1.5;
 }
 
 .card-info strong {
-    color: #334155;
+    color: var(--text-color);
     font-weight: 600;
 }
 
-/* ========================================
-   ETIQUETAS DE LOS DÍAS
-======================================== */
+
+/* =====================================================
+   11. ETIQUETAS DE LOS DÍAS
+===================================================== */
 
 .badge {
     display: inline-block;
+
     padding: 7px 12px;
     border-radius: 7px;
+
     font-size: 12px;
     font-weight: 600;
     line-height: 1.4;
@@ -283,16 +382,448 @@ body {
     background: #f3e8ff;
 }
 
-/* ========================================
-   DISEÑO RESPONSIVE PARA TABLETS
-======================================== */
+
+/* =====================================================
+   12. PANEL ADMINISTRATIVO
+   David Choez
+===================================================== */
+
+/* Menú lateral */
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px 15px;
+
+    background: var(--sidebar-bg);
+    color: #ffffff;
+
+    z-index: 1000;
+
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 15px;
+    margin-bottom: 20px;
+
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    color: var(--sidebar-color);
+    text-decoration: none;
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: var(--sidebar-hover);
+    color: #ffffff;
+}
+
+.sidebar-menu a:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   13. CONTENIDO PRINCIPAL Y BARRA SUPERIOR
+===================================================== */
+
+.main-content {
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+
+    transition: margin-left 0.3s ease;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-bottom: 30px;
+    background: transparent;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 15px;
+
+    background: var(--card-bg);
+    border-radius: 50px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   14. TARJETAS DE ESTADÍSTICAS
+===================================================== */
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 20px;
+
+    background: var(--card-bg);
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+    font-size: 1.25rem;
+}
+
+.icon-materias {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.icon-docentes {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.icon-aulas {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.icon-horarios {
+    background: #fae8ff;
+    color: #c084fc;
+}
+
+
+/* =====================================================
+   15. TABLAS PERSONALIZADAS
+===================================================== */
+
+.table-custom-container {
+    width: 100%;
+    margin-top: 30px;
+    padding: 25px;
+
+    background: var(--card-bg);
+    border-radius: var(--radius);
+
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+    overflow-x: auto;
+}
+
+.table-custom {
+    width: 100%;
+    margin-bottom: 0;
+
+    border-collapse: collapse;
+}
+
+.table-custom th {
+    padding: 12px 10px;
+
+    color: var(--muted-color);
+    font-weight: 600;
+    text-align: left;
+
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+}
+
+.table-custom td {
+    padding: 15px 10px;
+
+    color: var(--text-color);
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-custom tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* Indicador de estado */
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    margin-right: 10px;
+
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   16. BOTONES GENERALES DEL PANEL
+===================================================== */
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   17. INICIO DE SESIÓN Y REGISTRO
+   Leandro Anchudnia 
+===================================================== */
+
+/* Contenedor principal */
+
+.contenedor-login {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Logo */
+
+.contenedor-login .logo {
+    margin-bottom: 20px;
+
+    color: #2c3e50;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Título */
+
+.contenedor-login h1 {
+    margin-bottom: 8px;
+
+    color: #333333;
+    font-size: 22px;
+}
+
+
+/* Subtítulo */
+
+.contenedor-login .subtitulo {
+    margin-bottom: 24px;
+
+    color: #7f8c8d;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Etiquetas */
+
+.contenedor-login form label {
+    display: block;
+
+    margin-top: 14px;
+    margin-bottom: 6px;
+
+    color: #34495e;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Campos de entrada y listas */
+
+.contenedor-login form input,
+.contenedor-login form select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+
+    border: 1px solid #ccd1d1;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #2c3e50;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Efecto de selección */
+
+.contenedor-login form input:focus,
+.contenedor-login form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+
+/* Campos dinámicos */
+
+.contenedor-login .campo-dinamico {
+    margin-top: 5px;
+}
+
+
+/* Botón de envío */
+
+.contenedor-login button[type="submit"] {
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #3498db;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-login button[type="submit"]:hover {
+    background: #2980b9;
+}
+
+
+/* Enlaces inferiores */
+
+.contenedor-login .enlace-registro,
+.contenedor-login .volver {
+    margin-top: 16px;
+
+    color: #7f8c8d;
+    font-size: 14px;
+    text-align: center;
+}
+
+.contenedor-login .enlace-registro a,
+.contenedor-login .volver a {
+    color: #3498db;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contenedor-login .enlace-registro a:hover,
+.contenedor-login .volver a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   18. FONDO EXCLUSIVO DE ACCESO
+===================================================== */
+
+body.pagina-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+
+    background: #f4f7f6;
+}
+
+
+/* =====================================================
+   19. RESPONSIVE PARA TABLETS
+===================================================== */
 
 @media (max-width: 768px) {
-    body {
-        padding: 18px 12px;
-    }
+
+    /* Horarios */
 
     .container {
+        width: calc(100% - 24px);
+        margin: 18px auto;
         padding: 22px 16px;
     }
 
@@ -308,18 +839,40 @@ body {
         flex-direction: column;
         gap: 6px;
     }
-}
 
-/* ========================================
-   DISEÑO RESPONSIVE PARA CELULARES
-======================================== */
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
+    /* Panel administrativo */
+
+    .sidebar {
+        transform: translateX(-100%);
     }
 
+    .main-content {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+
+    .topbar {
+        margin-bottom: 22px;
+    }
+
+    .table-custom-container {
+        padding: 16px;
+    }
+}
+
+
+/* =====================================================
+   20. RESPONSIVE PARA CELULARES
+===================================================== */
+
+@media (max-width: 480px) {
+
+    /* Horarios */
+
     .container {
+        width: calc(100% - 20px);
+        margin: 10px auto;
         padding: 18px 12px;
         border-radius: 12px;
     }
@@ -327,6 +880,7 @@ body {
     .header {
         gap: 12px;
         margin-bottom: 22px;
+        padding-bottom: 18px;
     }
 
     .header-icon {
@@ -343,6 +897,9 @@ body {
         font-size: 12px;
     }
 
+
+    /* Búsqueda de horarios */
+
     .search-bar {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 90px 42px;
@@ -354,6 +911,7 @@ body {
     .filter-select,
     .btn-search {
         width: 100%;
+        min-width: 0;
         height: 42px;
     }
 
@@ -363,6 +921,13 @@ body {
         font-size: 12px;
     }
 
+    .btn-search {
+        font-size: 16px;
+    }
+
+
+    /* Tarjetas de horarios */
+
     .card {
         flex-direction: column;
     }
@@ -370,8 +935,10 @@ body {
     .time-block {
         width: 100%;
         min-width: 0;
+
         flex-direction: row;
         justify-content: flex-start;
+
         gap: 18px;
         padding: 12px 16px;
     }
@@ -389,8 +956,8 @@ body {
     }
 
     .card-title {
-        font-size: 15px;
         gap: 9px;
+        font-size: 15px;
     }
 
     .card-info p {
@@ -398,203 +965,68 @@ body {
     }
 
     .badge {
-        font-size: 11px;
         padding: 6px 9px;
+        font-size: 11px;
     }
-}
-```
 
 
+    /* Panel administrativo */
 
-
-/* ==========================================
-   1. CONFIGURACIÓN GENERAL Y VARIABLES DAVID CHOEZ
-   ========================================== */
-:root {
-    --sidebar-width: 260px;
-    --sidebar-bg: #1e293b;       /* Azul oscuro elegante */
-    --sidebar-color: #94a3b8;
-    --sidebar-hover: #334155;
-    --main-bg: #f8fafc;           /* Fondo gris muy claro */
-    --card-bg: #ffffff;
-    --text-color: #334155;
-}
-
-body {
-    background-color: var(--main-bg);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-}
-
-/* ==========================================
-   2. SIDEBAR (MENÚ LATERAL)
-   ========================================== */
-.sidebar {
-    width: var(--sidebar-width);
-    height: 100vh;
-    background-color: var(--sidebar-bg);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 15px;
-    z-index: 1000;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar-brand {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar-menu li {
-    margin-bottom: 8px;
-}
-
-.sidebar-menu a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 15px;
-    color: var(--sidebar-color);
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.sidebar-menu a:hover,
-.sidebar-menu a.active {
-    background-color: var(--sidebar-hover);
-    color: #ffffff;
-}
-
-/* ==========================================
-   3. CONTENIDO PRINCIPAL Y TOPBAR
-   ========================================== */
-.main-content {
-    margin-left: var(--sidebar-width);
-    padding: 30px;
-    min-height: 100vh;
-}
-
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    background-color: transparent;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    background: var(--card-bg);
-    padding: 6px 15px;
-    border-radius: 50px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-/* ==========================================
-   4. TARJETAS DE ESTADÍSTICAS (STAT CARDS)
-   ========================================== */
-.stat-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-3px);
-}
-
-.stat-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-}
-
-/* Colores personalizados para los iconos de estadísticas */
-.icon-materias { background-color: #e0f2fe; color: #0284c7; }
-.icon-docentes { background-color: #fef3c7; color: #d97706; }
-.icon-aulas { background-color: #dcfce7; color: #16a34a; }
-.icon-horarios { background-color: #fae8ff; color: #c084fc; }
-
-/* ==========================================
-   5. TABLAS PERSONALIZADAS
-   ========================================== */
-.table-custom-container {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 25px;
-    margin-top: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.table-custom {
-    margin-bottom: 0;
-}
-
-.table-custom th {
-    font-weight: 600;
-    color: #64748b;
-    border-bottom-width: 1px;
-    background-color: transparent !important;
-}
-
-.table-custom td {
-    padding: 15px 10px;
-    color: #334155;
-}
-
-/* Indicador de estado (punto verde) */
-.status-dot {
-    height: 8px;
-    width: 8px;
-    background-color: #22c55e;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-/* ==========================================
-   6. DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
-   ========================================== */
-@media (max-width: 768px) {
-    .sidebar {
-        /* Ocultar sidebar por defecto en pantallas pequeñas (puedes complementarlo con JS) */
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-    
     .main-content {
-        margin-left: 0;
-        padding: 15px;
+        padding: 15px 10px;
+    }
+
+    .sidebar {
+        width: min(var(--sidebar-width), 85vw);
+    }
+
+    .topbar {
+        gap: 12px;
+    }
+
+    .user-profile {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding: 6px 10px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .table-custom-container {
+        margin-top: 20px;
+        padding: 12px;
+    }
+
+    .table-custom th,
+    .table-custom td {
+        padding: 10px 8px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+
+    /* Inicio de sesión y registro */
+
+    .contenedor-login {
+        padding: 28px 20px;
+    }
+
+    .contenedor-login .logo {
+        font-size: 23px;
+    }
+
+    .contenedor-login h1 {
+        font-size: 20px;
     }
 }
+
+
+/* =====================================================
+   FIN DE LOS ESTILOS DE ACADEMTIME
+
+   Jesús López: horarios de estudiante y docente
+   David Choez: panel administrativo
+   Leandro Anchudnia: inicio de sesión y registro
+===================================================== */
