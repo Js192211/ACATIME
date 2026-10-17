@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AcadTime - Tu horario, tu mejor aliado</title>
-    <!-- Fuentes Google Fonts -->
+
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Iconos FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
 </head>
+
 <body class="bg-gradient">
 
-    <!-- Navegación Superior -->
+    <!-- Navegación superior -->
     <header class="navbar">
+
         <div class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>AcadTime</span>
         </div>
+
         <nav class="nav-links">
             <a href="#" class="active">Inicio</a>
             <a href="#">Materias</a>
@@ -29,41 +41,63 @@
             <a href="#">Horarios</a>
             <a href="#" class="btn-login-nav">Login</a>
         </nav>
+
     </header>
 
-    <!-- Sección Hero Principal -->
+    <!-- Contenido principal -->
     <main class="hero-container">
+
+        <!-- Presentación de AcadTime -->
         <section class="hero-content">
+
             <div class="hero-text">
+
                 <div class="brand-title">
                     <i class="fa-solid fa-graduation-cap brand-icon"></i>
                     <h1>AcadTime</h1>
                 </div>
+
                 <p class="tagline">Tu horario, tu mejor aliado</p>
-                
+
                 <h2>Gestión de horarios académicos</h2>
+
                 <p class="description">
-                    Organiza, consulta y administra los horarios de clases, docentes, aulas y materias de forma rápida y sencilla.
+                    Organiza, consulta y administra los horarios de clases,
+                    docentes, aulas y materias de forma rápida y sencilla.
                 </p>
 
+                <!-- Botones principales -->
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Comenzar <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#" class="btn btn-outline">Más información</a>
+
+                    <a href="#" class="btn btn-primary">
+                        Comenzar
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#" class="btn btn-outline">
+                        Más información
+                    </a>
+
                 </div>
+
             </div>
 
-            <!-- Ilustración / Imagen representativa -->
+            <!-- Ilustración del calendario -->
             <div class="hero-image">
+
                 <div class="calendar-3d-card">
                     <i class="fa-solid fa-calendar-days main-3d-icon"></i>
                     <i class="fa-solid fa-clock sub-3d-icon"></i>
                     <i class="fa-solid fa-book book-3d-icon"></i>
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Tarjetas de Acceso Rápido -->
+        <!-- Tarjetas de acceso rápido -->
         <section class="features-grid">
+
             <div class="feature-card">
                 <i class="fa-solid fa-calendar-check feature-icon"></i>
                 <h3>Horarios</h3>
@@ -81,13 +115,16 @@
                 <h3>Aulas</h3>
                 <p>Conoce la disponibilidad de las aulas.</p>
             </div>
+
         </section>
 
-        <!-- Banner inferior -->
+        <!-- Pie de página -->
         <footer class="hero-footer-text">
             <p>La mejor forma de organizar tu tiempo</p>
         </footer>
+
     </main>
 
 </body>
+
 </html>
