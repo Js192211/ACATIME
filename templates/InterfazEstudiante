@@ -1,0 +1,260 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel del Estudiante | AcadTime</title>
+
+    <link rel="stylesheet" href="estudiante.css">
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+
+        <!-- MENÚ LATERAL -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>AcadTime</h2>
+                <p>Gestión Académica</p>
+            </div>
+
+            <nav class="menu">
+                <a href="estudiante.html" class="active">🏠 Inicio</a>
+                <a href="horario-estudiante.html">📅 Mi horario</a>
+                <a href="materias.html">📚 Mis materias</a>
+                <a href="docentes.html">👨‍🏫 Mis docentes</a>
+                <a href="notificaciones.html">🔔 Notificaciones</a>
+                <a href="perfil-estudiante.html">👤 Mi perfil</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html">🚪 Cerrar sesión</a>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- ENCABEZADO -->
+            <header class="header">
+
+                <div>
+                    <h1>Panel del estudiante</h1>
+                    <p>Consulta tu información académica y horarios.</p>
+                </div>
+
+                <div class="user-info">
+                    <div class="avatar">JL</div>
+
+                    <div>
+                        <h3>Jesús López</h3>
+                        <p>Estudiante</p>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- BIENVENIDA -->
+            <section class="welcome">
+                <h2>¡Bienvenido, Jesús!</h2>
+                <p>
+                    Organiza tus clases y mantente al día
+                    con tus actividades académicas.
+                </p>
+            </section>
+
+
+            <!-- TARJETAS DE RESUMEN -->
+            <section class="dashboard-cards">
+
+                <article class="card">
+                    <div class="card-icon">📚</div>
+                    <div>
+                        <p>Materias inscritas</p>
+                        <h2>6</h2>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">📅</div>
+                    <div>
+                        <p>Clases de hoy</p>
+                        <h2>4</h2>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">👨‍🏫</div>
+                    <div>
+                        <p>Docentes</p>
+                        <h2>5</h2>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🔔</div>
+                    <div>
+                        <p>Notificaciones</p>
+                        <h2>2</h2>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- PRÓXIMA CLASE -->
+            <section class="content-section">
+
+                <div class="section-header">
+                    <h2>Próxima clase</h2>
+                    <a href="horario-estudiante.html">
+                        Ver horario completo
+                    </a>
+                </div>
+
+                <article class="next-class">
+
+                    <div class="class-time">
+                        <span>08:00</span>
+                        <small>10:00</small>
+                    </div>
+
+                    <div class="class-details">
+                        <h3>Programación Orientada a Objetos</h3>
+                        <p>👨‍🏫 Docente: Nombre del docente</p>
+                        <p>📍 Aula: Laboratorio 1</p>
+                        <p>📅 Día: Lunes</p>
+                    </div>
+
+                    <span class="status">Programada</span>
+
+                </article>
+
+            </section>
+
+
+            <!-- HORARIO SEMANAL -->
+            <section class="content-section">
+
+                <div class="section-header">
+                    <h2>Mi horario semanal</h2>
+                    <a href="horario-estudiante.html">
+                        Ver completo
+                    </a>
+                </div>
+
+                <div class="table-container">
+
+                    <table class="schedule-table">
+
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Lunes</th>
+                                <th>Martes</th>
+                                <th>Miércoles</th>
+                                <th>Jueves</th>
+                                <th>Viernes</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>08:00 - 10:00</td>
+                                <td>Programación</td>
+                                <td>Base de datos</td>
+                                <td>Programación</td>
+                                <td>Redes</td>
+                                <td>Inglés</td>
+                            </tr>
+
+                            <tr>
+                                <td>10:00 - 12:00</td>
+                                <td>Base de datos</td>
+                                <td>Redes</td>
+                                <td>Inglés</td>
+                                <td>Programación</td>
+                                <td>Base de datos</td>
+                            </tr>
+
+                            <tr>
+                                <td>13:00 - 15:00</td>
+                                <td>Redes</td>
+                                <td>Inglés</td>
+                                <td>Base de datos</td>
+                                <td>Inglés</td>
+                                <td>Programación</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICACIONES -->
+            <section class="content-section">
+
+                <div class="section-header">
+                    <h2>Últimas notificaciones</h2>
+                    <a href="notificaciones.html">Ver todas</a>
+                </div>
+
+                <div class="notification-list">
+
+                    <article class="notification">
+                        <div class="notification-icon">🔔</div>
+
+                        <div>
+                            <h3>Actualización de horario</h3>
+                            <p>
+                                Revisa tu horario para conocer
+                                posibles cambios de aula.
+                            </p>
+                            <small>Notificación académica</small>
+                        </div>
+                    </article>
+
+                    <article class="notification">
+                        <div class="notification-icon">📚</div>
+
+                        <div>
+                            <h3>Información académica</h3>
+                            <p>
+                                Consulta las actividades pendientes
+                                de tus materias.
+                            </p>
+                            <small>Recordatorio</small>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- PIE DE PÁGINA -->
+            <footer class="footer">
+                <p>
+                    © 2026 AcadTime | Sistema de Gestión de Horarios Académicos
+                </p>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
+```
