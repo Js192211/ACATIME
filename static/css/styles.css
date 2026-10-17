@@ -1,11 +1,11 @@
-
 /* =====================================================
    ACADEMTIME
    Sistema de gestión de horarios académicos
 
-   Horarios de estudiante y docente: Jesús López
+   Horarios: Jesús López
    Panel administrativo: David Choez
    Inicio de sesión y registro: Leandro Anchundia
+   Gestión de materias: Sonia Lucas
 ===================================================== */
 
 
@@ -72,7 +72,7 @@ textarea {
 
 
 /* =====================================================
-   3. CONTENEDOR PRINCIPAL DE HORARIOS
+   3. HORARIOS DE ESTUDIANTE Y DOCENTE
    Jesús López
 ===================================================== */
 
@@ -89,9 +89,7 @@ textarea {
 }
 
 
-/* =====================================================
-   4. ENCABEZADO DE HORARIOS
-===================================================== */
+/* Encabezado */
 
 .header {
     display: flex;
@@ -139,9 +137,7 @@ textarea {
 }
 
 
-/* =====================================================
-   5. BÚSQUEDA Y FILTROS DE HORARIOS
-===================================================== */
+/* Búsqueda y filtros */
 
 .search-bar {
     display: flex;
@@ -210,9 +206,7 @@ textarea {
 }
 
 
-/* =====================================================
-   6. LISTA DE HORARIOS
-===================================================== */
+/* Lista de horarios */
 
 .schedule-list {
     display: flex;
@@ -221,14 +215,11 @@ textarea {
 }
 
 
-/* =====================================================
-   7. TARJETAS DE MATERIAS
-===================================================== */
+/* Tarjetas de materias */
 
 .card {
     display: flex;
     align-items: stretch;
-
     overflow: hidden;
 
     background: #ffffff;
@@ -246,9 +237,7 @@ textarea {
 }
 
 
-/* =====================================================
-   8. BLOQUE DE HORAS
-===================================================== */
+/* Bloque de horas */
 
 .time-block {
     width: 115px;
@@ -278,9 +267,7 @@ textarea {
 }
 
 
-/* =====================================================
-   9. COLORES DE LOS HORARIOS
-===================================================== */
+/* Colores de los horarios */
 
 .color-blue {
     background: linear-gradient(145deg, #3b82f6, #1d4ed8);
@@ -299,9 +286,7 @@ textarea {
 }
 
 
-/* =====================================================
-   10. CONTENIDO DE LAS TARJETAS
-===================================================== */
+/* Contenido de las tarjetas */
 
 .card-content {
     flex: 1;
@@ -347,9 +332,7 @@ textarea {
 }
 
 
-/* =====================================================
-   11. ETIQUETAS DE LOS DÍAS
-===================================================== */
+/* Etiquetas de los días */
 
 .badge {
     display: inline-block;
@@ -384,7 +367,7 @@ textarea {
 
 
 /* =====================================================
-   12. PANEL ADMINISTRATIVO
+   4. PANEL ADMINISTRATIVO
    David Choez
 ===================================================== */
 
@@ -466,13 +449,10 @@ textarea {
 }
 
 
-/* =====================================================
-   13. CONTENIDO PRINCIPAL Y BARRA SUPERIOR
-===================================================== */
+/* Contenido principal */
 
 .main-content {
     min-height: 100vh;
-
     margin-left: var(--sidebar-width);
     padding: 30px;
 
@@ -506,9 +486,7 @@ textarea {
 }
 
 
-/* =====================================================
-   14. TARJETAS DE ESTADÍSTICAS
-===================================================== */
+/* Tarjetas de estadísticas */
 
 .stat-card {
     position: relative;
@@ -565,9 +543,7 @@ textarea {
 }
 
 
-/* =====================================================
-   15. TABLAS PERSONALIZADAS
-===================================================== */
+/* Tablas del panel */
 
 .table-custom-container {
     width: 100%;
@@ -585,7 +561,6 @@ textarea {
 .table-custom {
     width: 100%;
     margin-bottom: 0;
-
     border-collapse: collapse;
 }
 
@@ -620,7 +595,6 @@ textarea {
     height: 8px;
 
     display: inline-block;
-
     margin-right: 10px;
 
     background: #22c55e;
@@ -629,25 +603,11 @@ textarea {
 
 
 /* =====================================================
-   16. BOTONES GENERALES DEL PANEL
+   5. INICIO DE SESIÓN Y REGISTRO
+   Leandro Anchundia
 ===================================================== */
 
-button {
-    cursor: pointer;
-}
-
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-
-/* =====================================================
-   17. INICIO DE SESIÓN Y REGISTRO
-   Leandro Anchudnia 
-===================================================== */
-
-/* Contenedor principal */
+/* Tarjeta de acceso */
 
 .contenedor-login {
     width: 100%;
@@ -661,9 +621,6 @@ button:disabled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Logo */
-
 .contenedor-login .logo {
     margin-bottom: 20px;
 
@@ -673,18 +630,12 @@ button:disabled {
     text-align: center;
 }
 
-
-/* Título */
-
 .contenedor-login h1 {
     margin-bottom: 8px;
 
     color: #333333;
     font-size: 22px;
 }
-
-
-/* Subtítulo */
 
 .contenedor-login .subtitulo {
     margin-bottom: 24px;
@@ -695,7 +646,7 @@ button:disabled {
 }
 
 
-/* Etiquetas */
+/* Etiquetas y campos */
 
 .contenedor-login form label {
     display: block;
@@ -707,9 +658,6 @@ button:disabled {
     font-size: 14px;
     font-weight: 600;
 }
-
-
-/* Campos de entrada y listas */
 
 .contenedor-login form input,
 .contenedor-login form select {
@@ -730,17 +678,11 @@ button:disabled {
                 box-shadow 0.3s ease;
 }
 
-
-/* Efecto de selección */
-
 .contenedor-login form input:focus,
 .contenedor-login form select:focus {
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
 }
-
-
-/* Campos dinámicos */
 
 .contenedor-login .campo-dinamico {
     margin-top: 5px;
@@ -773,7 +715,7 @@ button:disabled {
 }
 
 
-/* Enlaces inferiores */
+/* Enlaces */
 
 .contenedor-login .enlace-registro,
 .contenedor-login .volver {
@@ -797,9 +739,7 @@ button:disabled {
 }
 
 
-/* =====================================================
-   18. FONDO EXCLUSIVO DE ACCESO
-===================================================== */
+/* Fondo exclusivo para las páginas de acceso */
 
 body.pagina-login {
     display: flex;
@@ -814,7 +754,315 @@ body.pagina-login {
 
 
 /* =====================================================
-   19. RESPONSIVE PARA TABLETS
+   6. GESTIÓN DE MATERIAS
+   Sonia Lucas
+   Diseño azul oscuro
+===================================================== */
+
+/*
+   IMPORTANTE:
+   La página de Sonia debe utilizar:
+   <body class="pagina-materias-sonia">
+   para aislar sus estilos del resto del proyecto.
+*/
+
+
+/* Configuración de la página */
+
+body.pagina-materias-sonia {
+    padding: 15px;
+    background: #061a32;
+    color: #e2eaf5;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Contenedor principal */
+
+.pagina-materias-sonia .contenedor {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 18px;
+
+    background: #071e38;
+    border: 1px solid #244563;
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Encabezado */
+
+.pagina-materias-sonia .encabezado {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 5px 0 18px;
+
+    border-bottom: 1px solid #193a59;
+}
+
+.pagina-materias-sonia .icono-titulo {
+    flex-shrink: 0;
+
+    font-size: 35px;
+    color: #36a3ff;
+}
+
+.pagina-materias-sonia .encabezado h1 {
+    margin-bottom: 5px;
+
+    color: #e2eaf5;
+    font-size: 21px;
+}
+
+.pagina-materias-sonia .encabezado p {
+    color: #91a9c4;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* Barra superior y buscador */
+
+.pagina-materias-sonia .barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin: 15px 0 18px;
+}
+
+.pagina-materias-sonia .buscador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex: 1;
+    min-width: 0;
+    height: 43px;
+
+    padding: 0 12px;
+
+    background: #102f4d;
+    border: 1px solid #31516e;
+    border-radius: 8px;
+}
+
+.pagina-materias-sonia .buscador span {
+    flex-shrink: 0;
+
+    font-size: 25px;
+    color: #a5bed8;
+}
+
+.pagina-materias-sonia .buscador input {
+    width: 100%;
+    min-width: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.pagina-materias-sonia .buscador input::placeholder {
+    color: #91a9c4;
+}
+
+
+/* Botón de nueva materia */
+
+.pagina-materias-sonia .btn-nueva {
+    flex-shrink: 0;
+
+    padding: 12px 15px;
+
+    background: #1683ef;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: background 0.2s;
+}
+
+.pagina-materias-sonia .btn-nueva:hover {
+    background: #3699ff;
+}
+
+
+/* Contenedor de la tabla */
+
+.pagina-materias-sonia .tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #254766;
+    border-radius: 8px;
+}
+
+
+/* Tabla de materias */
+
+.pagina-materias-sonia table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: left;
+    font-size: 13px;
+}
+
+.pagina-materias-sonia thead {
+    background: #0b2947;
+}
+
+.pagina-materias-sonia th {
+    padding: 14px 12px;
+
+    background: #0b2947;
+    color: #dce8f5;
+
+    font-weight: bold;
+
+    border-right: 1px solid #1b3a59;
+}
+
+.pagina-materias-sonia td {
+    padding: 10px 12px;
+
+    color: #d5e0ee;
+
+    border-top: 1px solid #1c3b59;
+    border-right: 1px solid #1c3b59;
+}
+
+.pagina-materias-sonia tbody tr {
+    background: #08213d;
+
+    transition: background 0.2s;
+}
+
+.pagina-materias-sonia tbody tr:hover {
+    background: #103151;
+}
+
+
+/* Botones de acciones */
+
+.pagina-materias-sonia .acciones {
+    white-space: nowrap;
+}
+
+.pagina-materias-sonia .acciones button {
+    width: 30px;
+    height: 31px;
+
+    margin-right: 5px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: #ffffff;
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.pagina-materias-sonia .btn-editar {
+    background: #087c9b;
+}
+
+.pagina-materias-sonia .btn-editar:hover {
+    background: #079fc3;
+}
+
+.pagina-materias-sonia .btn-eliminar {
+    background: #a93245;
+}
+
+.pagina-materias-sonia .btn-eliminar:hover {
+    background: #d34458;
+}
+
+
+/* Paginación */
+
+.pagina-materias-sonia .paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.pagina-materias-sonia .paginas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.pagina-materias-sonia .btn-pagina {
+    min-width: 35px;
+    height: 36px;
+
+    padding: 0 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #0b2b4b;
+    color: #c5d7eb;
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.pagina-materias-sonia .btn-pagina:hover {
+    background: #16436c;
+}
+
+.pagina-materias-sonia .btn-pagina.activo {
+    background: #1683ef;
+    color: #ffffff;
+}
+
+.pagina-materias-sonia .paginacion p {
+    color: #8fa8c4;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   7. BOTONES GENERALES
+===================================================== */
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   8. RESPONSIVE PARA TABLETS
 ===================================================== */
 
 @media (max-width: 768px) {
@@ -863,7 +1111,7 @@ body.pagina-login {
 
 
 /* =====================================================
-   20. RESPONSIVE PARA CELULARES
+   9. RESPONSIVE PARA CELULARES
 ===================================================== */
 
 @media (max-width: 480px) {
@@ -897,9 +1145,6 @@ body.pagina-login {
         font-size: 12px;
     }
 
-
-    /* Búsqueda de horarios */
-
     .search-bar {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 90px 42px;
@@ -924,9 +1169,6 @@ body.pagina-login {
     .btn-search {
         font-size: 16px;
     }
-
-
-    /* Tarjetas de horarios */
 
     .card {
         flex-direction: column;
@@ -1007,7 +1249,7 @@ body.pagina-login {
     }
 
 
-    /* Inicio de sesión y registro */
+    /* Inicio de sesión */
 
     .contenedor-login {
         padding: 28px 20px;
@@ -1024,9 +1266,52 @@ body.pagina-login {
 
 
 /* =====================================================
+   10. RESPONSIVE DE GESTIÓN DE MATERIAS
+   Sonia Lucas
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body.pagina-materias-sonia {
+        padding: 8px;
+    }
+
+    .pagina-materias-sonia .contenedor {
+        padding: 12px;
+    }
+
+    .pagina-materias-sonia .barra-superior {
+        flex-wrap: wrap;
+    }
+
+    .pagina-materias-sonia .buscador {
+        flex-basis: 100%;
+    }
+
+    .pagina-materias-sonia .btn-nueva {
+        width: 100%;
+    }
+
+    .pagina-materias-sonia .tabla-contenedor {
+        overflow-x: auto;
+    }
+
+    .pagina-materias-sonia table {
+        min-width: 520px;
+    }
+
+    .pagina-materias-sonia .paginacion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* =====================================================
    FIN DE LOS ESTILOS DE ACADEMTIME
 
    Jesús López: horarios de estudiante y docente
    David Choez: panel administrativo
-   Leandro Anchudnia: inicio de sesión y registro
+   Leandro Anchundia: inicio de sesión y registro
+   Sonia Lucas: gestión de materias
 ===================================================== */
