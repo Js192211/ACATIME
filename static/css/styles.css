@@ -1,203 +1,405 @@
-/* ==========================================================================
-   1. RESET BÁSICO Y CONFIGURACIÓN GLOBAL
-   ========================================================================== */
+
+
+
+/* ========================================
+   ESTILOS GENERALES DE ACADEMTIME  Jesus lopez horario del docnete y estudiante
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #080f1e; /* Fondo oscuro global de la página */
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
-/* ==========================================================================
-   2. CONTENEDOR PRINCIPAL / PANEL
-   ========================================================================== */
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+
 .container {
-    background-color: #0b172a; /* Fondo azul oscuro del panel */
-    border: 1px solid #1e293b;
-    border-radius: 12px;
-    padding: 24px;
     width: 100%;
-    max-width: 550px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
 }
 
-/* ==========================================================================
-   3. ENCABEZADO DE LA SECCIÓN (Ícono y Título)
-   ========================================================================== */
+/* ========================================
+   ENCABEZADO
+======================================== */
+
 .header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .header-icon {
-    font-size: 2rem;
-    background-color: #1e293b;
-    padding: 10px;
-    border-radius: 10px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background: #dbeafe;
+    color: #2563eb;
+    border-radius: 14px;
+    font-size: 30px;
+    flex-shrink: 0;
 }
 
 .header-text h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
+    color: #0f172a;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
 .header-text p {
-    font-size: 0.85rem;
-    color: #94a3b8; /* Texto secundario gris claro */
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* ==========================================================================
-   4. BARRA DE BÚSQUEDA Y FILTROS
-   ========================================================================== */
+/* ========================================
+   BARRA DE BÚSQUEDA Y FILTROS
+======================================== */
+
 .search-bar {
     display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.search-input,
+.filter-select {
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .search-input {
     flex: 1;
-    background-color: #111e36;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: #ffffff;
-    font-size: 0.9rem;
-    outline: none;
-}
-
-.search-input::placeholder {
-    color: #64748b;
+    min-width: 0;
 }
 
 .filter-select {
-    background-color: #111e36;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: #ffffff;
-    font-size: 0.9rem;
-    outline: none;
+    width: 150px;
     cursor: pointer;
+}
+
+.search-input:focus,
+.filter-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 .btn-search {
-    background-color: #2563eb; /* Azul principal para el botón */
+    width: 48px;
+    height: 46px;
     border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    padding: 10px 16px;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-size: 19px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s ease;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .btn-search:hover {
-    background-color: #1d4ed8;
+    background: #1d4ed8;
+    transform: translateY(-1px);
 }
 
-/* ==========================================================================
-   5. LISTADO Y TARJETAS DE MATERIAS / CLASES
-   ========================================================================== */
+/* ========================================
+   LISTA DE HORARIOS
+======================================== */
+
 .schedule-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
 }
 
-/* Tarjeta individual de horario */
+/* ========================================
+   TARJETAS DE MATERIAS
+======================================== */
+
 .card {
-    background-color: #111e36;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
     display: flex;
+    align-items: stretch;
     overflow: hidden;
-    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Bloque lateral de hora (Izquierda) */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.09);
+}
+
+/* ========================================
+   BLOQUE DE HORAS
+======================================== */
+
 .time-block {
-    width: 90px;
+    width: 115px;
+    min-width: 115px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 0.9rem;
+    gap: 10px;
+    padding: 20px 12px;
+    font-size: 17px;
+    font-weight: 700;
     color: #ffffff;
-    padding: 12px;
-    text-align: center;
 }
 
-/* Contenido de la tarjeta (Centro/Derecha) */
+.time-block span:first-child {
+    font-size: 20px;
+}
+
+.time-block span:last-child {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+/* ========================================
+   COLORES DE LOS HORARIOS
+======================================== */
+
+.color-blue {
+    background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+}
+
+.color-green {
+    background: linear-gradient(145deg, #22c55e, #15803d);
+}
+
+.color-yellow {
+    background: linear-gradient(145deg, #f59e0b, #d97706);
+}
+
+.color-purple {
+    background: linear-gradient(145deg, #a855f7, #7e22ce);
+}
+
+/* ========================================
+   CONTENIDO DE LAS TARJETAS
+======================================== */
+
 .card-content {
     flex: 1;
-    padding: 12px 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-width: 0;
+    padding: 22px 24px;
 }
 
-/* Título de la materia */
 .card-title {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 6px;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
 }
 
-/* Información adicional (Docente/Grupo y Aula) */
+.card-title span:first-child {
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
 .card-info {
-    font-size: 0.8rem;
-    color: #cbd5e1;
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin-bottom: 15px;
 }
 
-/* ==========================================================================
-   6. ETIQUETAS DE DÍAS (BADGES)
-   ========================================================================== */
+.card-info p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card-info strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+/* ========================================
+   ETIQUETAS DE LOS DÍAS
+======================================== */
+
 .badge {
-    align-self: flex-end;
-    font-size: 0.7rem;
-    padding: 4px 12px;
-    border-radius: 12px;
-    color: #ffffff;
-    font-weight: 500;
-    margin-top: 4px;
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
-/* ==========================================================================
-   7. PALETA DE COLORES (Compartida para bloques y etiquetas)
-   ========================================================================== */
-/* Variantes de color para el bloque de hora */
-.color-blue   { background-color: #3b82f6; }
-.color-green  { background-color: #10b981; }
-.color-yellow { background-color: #d97706; }
-.color-purple { background-color: #8b5cf6; }
+.badge-blue {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
 
-/* Variantes de color para las insignias de días */
-.badge-blue   { background-color: #2563eb; }
-.badge-green  { background-color: #059669; }
-.badge-yellow { background-color: #b45309; }
-.badge-purple { background-color: #7c3aed; }
+.badge-green {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.badge-yellow {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.badge-purple {
+    color: #7e22ce;
+    background: #f3e8ff;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE PARA TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .container {
+        padding: 22px 16px;
+    }
+
+    .header-text h2 {
+        font-size: 23px;
+    }
+
+    .card-content {
+        padding: 18px;
+    }
+
+    .card-info {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE PARA CELULARES
+======================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 18px 12px;
+        border-radius: 12px;
+    }
+
+    .header {
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .header-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .header-text h2 {
+        font-size: 20px;
+    }
+
+    .header-text p {
+        font-size: 12px;
+    }
+
+    .search-bar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 90px 42px;
+        gap: 7px;
+        margin-bottom: 20px;
+    }
+
+    .search-input,
+    .filter-select,
+    .btn-search {
+        width: 100%;
+        height: 42px;
+    }
+
+    .search-input,
+    .filter-select {
+        padding: 0 8px;
+        font-size: 12px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .time-block {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 12px 16px;
+    }
+
+    .time-block span:first-child {
+        font-size: 17px;
+    }
+
+    .time-block span:last-child {
+        font-size: 14px;
+    }
+
+    .card-content {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 15px;
+        gap: 9px;
+    }
+
+    .card-info p {
+        font-size: 13px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+}
+```
